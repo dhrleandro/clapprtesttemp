@@ -1,5 +1,5 @@
 async function getSpriteData() {
-    const url = `${window.location.origin}/assets/sprite.json`;
+    const url = `${window.location.origin}/sprite.json`;
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -16,7 +16,7 @@ async function getSpriteData() {
 async function makeThumbs() {
     const spriteData = await getSpriteData();
 
-    const sprite = `${window.location.origin}/assets/sprite.jpg`;
+    const sprite = `${window.location.origin}/sprite.jpg`;
     const total = spriteData.thumbnail_count ?? 0;
     const width = spriteData.thumbnail_width ?? 0;
     const height = spriteData.thumbnail_height ?? 0;
@@ -28,7 +28,7 @@ async function makeThumbs() {
 
 async function player() {
     // veja custom-serve-plugin.js
-    const videoUrl = `${window.location.origin}/assets/webvtt-player.mp4`;
+    const videoUrl = `${window.location.origin}/webvtt-player.mp4`;
 
     const playerElement = document.getElementById("player-wrapper")
 
@@ -37,7 +37,7 @@ async function player() {
 
     player = new Clappr.Player({
         source: videoUrl,
-        poster: `${window.location.origin}/assets/poster.png`,
+        poster: `${window.location.origin}/poster.png`,
         mute: false,
         autoPlay: false,
         width: 640,
@@ -59,13 +59,13 @@ async function player() {
                     kind: 'subtitles',
                     label: 'Português',
                     lang: 'pt-BR',
-                    src: `${window.location.origin}/assets/webvtt-player-pt.vtt`,
+                    src: `${window.location.origin}/webvtt-player-pt.vtt`,
                 },
                 {
                     kind: 'subtitles',
                     label: 'Inglês',
                     lang: 'en-US', // https://github.com/clappr/clappr-core/blob/3126c3a38a6eee9d5aba3918b194e6380fa1178c/src/plugins/strings/strings.js#L132C21-L132C26
-                    src: `${window.location.origin}/assets/webvtt-player-en.vtt`,
+                    src: `${window.location.origin}/webvtt-player-en.vtt`,
                 }
             ]
         },
